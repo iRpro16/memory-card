@@ -23,9 +23,13 @@ export default function Card({ pathParameter, value }) {
     }, [pathParameter]);
 
     return (
-        <div id={value}>
+        <div id={value} className={pathParameter}>
             <p>{pathParameter}</p>
-            {data ? <img src={data.sprites.front_default} id={value} />: "Loading..."}
+            {data ? <img 
+                src={data.sprites.front_default} 
+                id={value} 
+                className="pokemon-img"
+                /> : "Loading..."}
         </div>
     )
 }

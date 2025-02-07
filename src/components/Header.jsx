@@ -3,8 +3,8 @@ export default function Header ({ data }) {
         <div className="header">
             <h1>Memory Game</h1>
             <div>
-                <p>Score: {data.score}</p>
-                <p>Best Score: {data.bestScore}</p>
+                <p>Score: {data.score.current}</p>
+                <p>Best Score: {data.bestScore.current}</p>
             </div>
         </div>
     )

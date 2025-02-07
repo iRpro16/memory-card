@@ -1,50 +1,50 @@
 export const pokemonObjects = [
     {
-        id: crypto.randomUUID(),
+        value: 0,
         name: 'charizard'
     },
     {
-        id: crypto.randomUUID(),
+        value: 1,
         name: 'blastoise'
     },
     {
-        id: crypto.randomUUID(),
+        value: 2,
         name: 'venusaur'
     },
     {
-        id: crypto.randomUUID,
+        value: 3,
         name: 'blaziken'
     },
     {
-        id: crypto.randomUUID(),
+        value: 4,
         name: 'swampert'
     },
     {
-        id: crypto.randomUUID(),
+        value: 5,
         name: 'sceptile'
     },
     {
-        id: crypto.randomUUID(),
+        value: 6,
         name: 'typhlosion'
     },
     {
-        id: crypto.randomUUID(),
+        value: 7,
         name: 'feraligatr'
     },
     {
-        id: crypto.randomUUID(),
+        value: 8,
         name: 'meganium'
     },
     {
-        id: crypto.randomUUID(),
+        value: 9,
         name: 'infernape'
     },
     {
-        id: crypto.randomUUID(),
+        value: 10,
         name: 'empoleon'
     },
     {
-        id: crypto.randomUUID(),
+        value: 11,
         name: 'torterra'
     }
 ]

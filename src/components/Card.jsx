@@ -1,28 +1,31 @@
 import { useState, useEffect } from "react";
+import '../styles/Card.css';
 
-export default function Card({ pathParameter }) {
+export default function Card({ pathParameter, value }) {
     const [data, setData] = useState(null);
     const BASE_URL = 'https://pokeapi.co/api/v2/pokemon/';
 
     useEffect(() => {
-        const controller = new AbortController();
-        const signal = controller.signal;
-        fetch(BASE_URL + pathParameter, {
-            signal: signal,
-        })
-        .then(response => response.json())
-        .then(json => setData(json)) // handle success
-        .catch(error => console.error(error))
+        async function startFetching() {
+            setData(null); //set state to null
+            const result = await fetch(BASE_URL + pathParameter);
+            const json = await result.json();
+            if (active) {
+                setData(json);
+            }
+        }
 
+        let active = true;
+        startFetching();
         return () => {
-            controller.abort();
+            active = false;
         }
     }, [pathParameter]);
 
     return (
-        <div>
+        <div id={value}>
             <p>{pathParameter}</p>
-            {data ? <img src={data.sprites.front_default} alt="" />: "Loading..."}
+            {data ? <img src={data.sprites.front_default} id={value} />: "Loading..."}
         </div>
     )
 }

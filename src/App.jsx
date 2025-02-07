@@ -1,12 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import MainContent from './components/MainContent';
 import Header from './components/Header';
 import { pokemonObjects } from './api/api_data';
 import './App.css'
 
 export default function App() {
-  const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+  const score = useRef(0);
+  const bestScore = useRef(0);
   const [pokemon, setPokemon] = useState(pokemonObjects);
 
   const data = {
@@ -16,12 +16,6 @@ export default function App() {
   }
 
   const modifiers = {
-    handleScoreChange: (score) => {
-      setScore(score);
-    },
-    handleBestScore: (bestScore) => {
-      setBestScore(bestScore);
-    },
     handlePokemon: (pokemon) => {
       setPokemon(pokemon);
     }

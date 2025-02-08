@@ -5,7 +5,7 @@ export default function Header ({ data }) {
         <div className="header">
             <div>
                 <h1>Memory Game</h1>
-                <img src="../public/game.png" className="pokeball-img"alt="" />
+                <img src="/game.png" className="pokeball-img"/>
 
             </div>
             <div>
